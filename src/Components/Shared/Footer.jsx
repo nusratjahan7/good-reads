@@ -5,11 +5,11 @@ import { FaFacebook } from 'react-icons/fa';
 const Footer = () => {
     return (
         <footer className="footer w-11/12 !mx-auto !py-9 flex flex-col sm:flex-row items-center sm:items-start justify-between  p-10">
-            <nav>
-                <a href="#" className='roboto text-4xl text-(--deep)/50 tracking-tighter '>
+            <nav className='flex flex-col items-center md:items-start'>
+                <h3 href="#" className='roboto text-4xl text-(--deep)/50 tracking-tighter text-center md:text-left'>
                     good<span className='text-(--rust) '>reads</span>
-                </a>
-                <p className='max-w-sm text-(--muted)'>A modern library for the curious. Borrow widely, read deeply, and let great ideas keep good company.</p>
+                </h3>
+                <p className='max-w-sm text-(--muted) text-center md:text-left'>A modern library for the curious. Borrow widely, read deeply, and let great ideas keep good company.</p>
             </nav>
             <nav>
                 <h6 className="footer-title text-(--rust)">Services</h6>

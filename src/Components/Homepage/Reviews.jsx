@@ -127,15 +127,15 @@ const Reviews = () => {
 
                 <Carousel showArrows={true} infiniteLoop={true} useKeyboardArrows={true} swipeable={true}
                     showThumbs={false}
-
+                    selectedItem={1}
                     centerMode={true}
                     centerSlidePercentage={20}
-                    
+
 
                     renderArrowNext={(clickHandler, hasNext, label) => (
                         <button
                             onClick={clickHandler}
-                            className="absolute right-0 top-1/2 transform -translate-y-1/2 text-2xl text-(--rust)"
+                            className="absolute right-0 top-1/2 transform -translate-y-1/2  bg-(--rust)/30 !px-2 !py-2 rounded-full text-2xl text-(--rust)"
                             aria-label={label}
                         >
                             <BiSolidRightArrow />
@@ -162,15 +162,15 @@ const Reviews = () => {
 
                 <Carousel showArrows={true} infiniteLoop={true} useKeyboardArrows={true} swipeable={true}
                     showThumbs={false}
-
+                    selectedItem={1}
                     centerMode={true}
                     centerSlidePercentage={25}
-                    
+
 
                     renderArrowNext={(clickHandler, hasNext, label) => (
                         <button
                             onClick={clickHandler}
-                            className="absolute right-0 top-1/2 transform -translate-y-1/2 text-2xl text-(--rust)"
+                            className="absolute right-0 top-1/2 transform -translate-y-1/2  bg-(--rust)/30 !px-2 !py-2 rounded-full text-2xl text-(--rust)"
                             aria-label={label}
                         >
                             <BiSolidRightArrow />
@@ -201,12 +201,12 @@ const Reviews = () => {
 
                     centerMode={true}
                     centerSlidePercentage={32}
-                    
+
 
                     renderArrowNext={(clickHandler, hasNext, label) => (
                         <button
                             onClick={clickHandler}
-                            className="absolute right-0 top-1/2 transform -translate-y-1/2 text-2xl text-(--rust)"
+                            className="absolute right-0 top-1/2 transform -translate-y-1/2  bg-(--rust)/30 !px-2 !py-2 rounded-full text-2xl text-(--rust)"
                             aria-label={label}
                         >
                             <BiSolidRightArrow />
@@ -237,12 +237,12 @@ const Reviews = () => {
 
                     centerMode={true}
                     centerSlidePercentage={38}
-                    
+
 
                     renderArrowNext={(clickHandler, hasNext, label) => (
                         <button
                             onClick={clickHandler}
-                            className="absolute right-0 top-1/2 transform -translate-y-1/2 text-2xl text-(--rust)"
+                            className="absolute right-0 top-1/2 transform -translate-y-1/2  bg-(--rust)/30 !px-2 !py-2 rounded-full text-2xl text-(--rust)"
                             aria-label={label}
                         >
                             <BiSolidRightArrow />
@@ -265,6 +265,7 @@ const Reviews = () => {
                 </Carousel>
 
             </div>
+
             <div className=" !mt-6  sm:hidden">
 
                 <Carousel showArrows={true} infiniteLoop={true} useKeyboardArrows={true} swipeable={true}
@@ -272,12 +273,12 @@ const Reviews = () => {
 
                     centerMode={true}
                     centerSlidePercentage={50}
-                    
+
 
                     renderArrowNext={(clickHandler, hasNext, label) => (
                         <button
                             onClick={clickHandler}
-                            className="absolute right-0 top-1/2 transform -translate-y-1/2 text-2xl text-(--rust)"
+                            className="absolute right-0 top-1/2 transform -translate-y-1/2 text-2xl bg-(--rust)/30 !px-2 !py-2 rounded-full text-(--rust)"
                             aria-label={label}
                         >
                             <BiSolidRightArrow />
