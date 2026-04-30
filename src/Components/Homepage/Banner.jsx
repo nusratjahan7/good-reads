@@ -14,14 +14,6 @@ const fadeInUp = {
     })
 };
 
-const fadeInRight = {
-    hidden: { opacity: 0, x: 30 },
-    visible: {
-        opacity: 1,
-        x: 0,
-        transition: { duration: 1, delay: 0.5, ease: 'easeOut' }
-    }
-};
 
 const pulse = {
     animate: {
@@ -30,13 +22,6 @@ const pulse = {
     }
 };
 
-const scrollDown = {
-    animate: {
-        scaleY: [0, 1, 1],
-        opacity: [1, 1, 0],
-        transition: { duration: 1.5, repeat: Infinity, ease: 'easeInOut' }
-    }
-};
 
 const Banner = () => {
     return (
@@ -49,7 +34,7 @@ const Banner = () => {
                     initial="hidden"
                     animate="visible"
                     custom={0}
-                    className="!mt-16 md:!mt-0 inline-flex items-center gap-2  border border-(--rust) rounded-full !px-4 !py-2 text-sm text-(--rust) font-['Space_Mono',monospace]"
+                    className="!mt-12 md:!mt-0 inline-flex items-center gap-2  border border-(--rust) rounded-full !px-4 !py-2 text-sm text-(--rust) font-['Space_Mono',monospace]"
                 >
                     <motion.span
                         variants={pulse}
@@ -110,7 +95,7 @@ const Banner = () => {
 
             <motion.div
                     className="relative"
-                    initial={{ opacity: 0, x: -50 }}
+                    initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.7, delay: 0.2 }}
                     viewport={{ once: true, amount: 0.2 }}

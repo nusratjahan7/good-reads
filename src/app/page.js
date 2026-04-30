@@ -13,9 +13,9 @@ export default function Home() {
       <Banner />
       <Stats />
       <Choose />
-      <JoinNow />
       <PopularBooks />
       <BestSellers />
+      <JoinNow />
       <Reviews />
       <DiscoverPage />
     </div>
