@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import "tailwindcss";
+@plugin "daisyui";
 
 :root
  {
@@ -31,17 +33,25 @@
 }
 
 body{
-  overflow-x:hidden
+  overflow-x:hidden;
+  font-family: "Inter", sans-serif;
+  background: #fcf0d7;
 }
 
 .font1 {
   font-family: "Playfair Display", serif;
 }
-.font2 {
-  font-family: "Inter", sans-serif;
-}
-.lato {
+
+.lato-thin {
   font-family: "Lato", sans-serif;
+  font-weight: 90;
+}
+
+.roboto{
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 100;
   font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
