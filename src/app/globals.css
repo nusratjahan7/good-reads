@@ -35,7 +35,7 @@
 body{
   overflow-x:hidden;
   font-family: "Inter", sans-serif;
-  background: #fcf0d7;
+  background: #fff8e9;
 }
 
 .font1 {
@@ -54,4 +54,10 @@ body{
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
+}
+
+@layer utilities {
+  .animate-bounce-slow {
+    animation: bounce 2s infinite;
+  }
 }
