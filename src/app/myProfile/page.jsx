@@ -1,9 +1,71 @@
+"use client"
+import { authClient } from '@/lib/auth-client';
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
+import { BiCalendar, BiMailSend, BiPencil } from 'react-icons/bi';
 
 const MyProfile = () => {
+    const { data: session, isPending } = authClient.useSession();
+    const user = session?.user;
+    const createdDate = new Date(user?.createdAt); 
+    const formattedDate = createdDate.toLocaleDateString();
+    if (!user) {
+        return (
+            <section className="!mx-auto max-w-md bg-(--rust)/20 !px-6 !my-32  !py-10 text-center rounded-2xl">
+                <h1 className="font-serif text-3xl !mb-6">Sign in to view your profile</h1>
+                < button className="btn outline-none border-none !px-3 bg-(--rust) text-white">
+                    <Link href="/login">Log In</Link>
+                </button>
+            </section>
+        );
+    }
+
     return (
         <div>
-            My Profile
+            <section className="!mx-auto max-w-3xl !px-6 !py-5 md:!py-4">
+                <div className="overflow-hidden rounded-2xl border border-(--rust) bg-(--rust)/60 shadow-card">
+                    <div className="h-32 bg-[#461b09]" />
+                    <div className="!px-8 !pb-8">
+                        <div className="!-mt-14 flex items-end justify-between">
+                            <div className="h-28 w-28 overflow-hidden rounded-full border-4 border-[#8b4020] bg-(--surface)">
+                                {user?.image ? (
+                                    <Image src={user.image} alt={user.name} className="h-full w-full object-cover" />
+                                ) : (
+                                    <div className="flex h-full w-full items-center justify-center font-serif text-4xl text-(--gold)">
+                                        {user.name.charAt(0).toUpperCase()}
+                                    </div>
+                                )}
+                            </div>
+                            <button className="btn outline-none shadow-none border-none !px-3 bg-(--rust) text-white">
+                                <Link href="/profile/update" className='flex'>
+                                    <BiPencil className="!mr-1.5 h-4 w-4" /> Update
+                                </Link>
+                            </button >
+                        </div>
+
+                        <h1 className="!mt-4 font-serif text-4xl">{user.name}</h1>
+                        <p className="!mt-1 text-sm text-[#461b09] font-bold">Member of goodreads</p>
+
+                        <div className="!mt-8 grid gap-3 text-sm">
+                            <div className="flex items-center gap-3 rounded-lg border border-(--rust) bg-(--surface) !px-4 !py-3">
+                                <BiMailSend className="h-4 w-4 text-(--gold)" />
+                                <span className="text-(--gold) font-bold">Email</span>
+                                <span className="!ml-auto text-(--gold)">{user.email}</span>
+                            </div>
+                            <div className="flex items-center gap-3 rounded-lg border border-(--rust) bg-(--surface) !px-4 !py-3">
+                                <BiCalendar className="h-4 w-4 text-(--gold)" />
+                                <span className="text-(--gold) font-bold">Member since</span>
+                                <span className="!ml-auto text-(--gold)">{formattedDate}</span>
+                            </div>
+                            <div className="flex items-center gap-3 rounded-lg border border-(--rust) bg-(--surface) !px-4 !py-3">
+                                <span className="text-(--gold) font-bold">User ID</span>
+                                <span className="!ml-auto text-(--gold) truncate font-mono text-xs">{user.id}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };
