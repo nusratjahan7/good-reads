@@ -2,13 +2,16 @@
 import React, { useState } from 'react';
 import NavLink from './Navlink';
 import Link from 'next/link';
+import { authClient } from '@/lib/auth-client';
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
+    const { data: session, isPending } = authClient.useSession();
+    const user = session?.user;
 
     return (
         <nav className=' !py-4 sticky top-0 right-0 left-0 z-50  backdrop-blur-2xl'>
-            <div className= 'w-11/12 !mx-auto flex items-center justify-between'>
+            <div className='w-11/12 !mx-auto flex items-center justify-between'>
                 <a href="#" className='roboto text-3xl text-(--deep)/50 tracking-tighter '>
                     good<span className='text-(--rust) '>reads</span>
                 </a>
@@ -21,13 +24,21 @@ const Navbar = () => {
                     <li><NavLink href={'/myProfile'}>My Profile</NavLink></li>
                 </ul>
 
-                <div className='flex gap-4'>
-                    <button className="btn hidden md:block outline-none border-none !px-3 bg-(--rust) text-white">
-                        <Link href={'/login'}>Login</Link>
-                    </button>
-                    <button className="btn btn-outline hidden md:block  !px-3 text-(--rust) hover:bg-(--rust)/30  hover:border hover:border-(--rust)/20">
-                        <Link href={'/register'}>Signup</Link>
-                    </button>
+                <div>
+                    { isPending ? 
+                    (<span className="hidden md:block  loading loading-dots loading-xs"></span>) 
+                    
+                    : user ? 
+                    (<button onClick={async () => await authClient.signOut()} className="btn hidden md:block outline-none border-none !px-3 bg-(--rust) text-white">Logout</button>)
+                    
+                    : (<div className='flex gap-4'>
+                        <button className="btn hidden md:block outline-none border-none !px-3 bg-(--rust) text-white">
+                            <Link href={'/login'}>Login</Link>
+                        </button>
+                        <button className="btn btn-outline hidden md:block  !px-3 text-(--rust) hover:bg-(--rust)/30  hover:border hover:border-(--rust)/20">
+                            <Link href={'/register'}>Signup</Link>
+                        </button>
+                    </div>) }
                 </div>
 
 
@@ -49,14 +60,23 @@ const Navbar = () => {
                         <li><NavLink href={'/myProfile'} onClick={() => setOpen(false)}>My Profile</NavLink></li>
                     </ul>
 
-                    <div className='flex flex-col gap-4'>
+                    <div>
+                    { isPending ? 
+                    (<span className="loading loading-dots loading-xs"></span>) 
+                    
+                    : user ? 
+                    (<button onClick={async () => await authClient.signOut()} className="btn outline-none border-none !px-3 bg-(--rust) text-white">Logout</button>)
+                    
+                    : (<div className='flex flex-col gap-4'>
                         <button className="btn outline-none border-none !px-3 bg-(--rust) text-white">
                             <Link href={'/login'}>Login</Link>
                         </button>
                         <button className="btn btn-outline  !px-3 text-(--rust) hover:bg-(--rust)/30  hover:border hover:border-(--rust)/20">
                             <Link href={'/register'}>Signup</Link>
                         </button>
-                    </div>
+                    </div>) }
+
+                </div>
                 </div>
             )}
 
