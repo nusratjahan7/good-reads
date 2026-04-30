@@ -7,8 +7,8 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className='w-11/12 !mx-auto !py-4 '>
-            <div className='flex items-center justify-between'>
+        <nav className=' !py-4 sticky top-0 right-0 left-0 z-50  backdrop-blur-2xl'>
+            <div className= 'w-11/12 !mx-auto flex items-center justify-between'>
                 <a href="#" className='roboto text-3xl text-(--deep)/50 tracking-tighter '>
                     good<span className='text-(--rust) '>reads</span>
                 </a>
@@ -41,7 +41,7 @@ const Navbar = () => {
             </div>
 
             {open && (
-                <div className="md:hidden w-11/12 mx-auto mb-4 rounded-2xl  bg-(--rust)/30 backdrop-blur-xl !px-6 !py-6 !mt-1.5">
+                <div className="md:hidden w-11/12 !mx-auto mb-4 rounded-2xl  bg-(--rust)/30 backdrop-blur-xl !px-6 !py-6 !mt-1.5">
                     <ul className="flex flex-col gap-3 list-none text-(--deep)/80 !mb-3">
                         <li><NavLink href={'/'} onClick={() => setOpen(false)}>Home</NavLink></li>
                         <li><NavLink href={'/about'} onClick={() => setOpen(false)}>About</NavLink></li>

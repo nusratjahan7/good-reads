@@ -1,7 +1,7 @@
 import Banner from "@/Components/Homepage/Banner";
 import BestSellers from "@/Components/Homepage/BestSellers";
 import Choose from "@/Components/Homepage/Choose";
-import DiscoverPage from "@/Components/Homepage/DiscoverPage";
+
 import JoinNow from "@/Components/Homepage/JoinNow";
 import PopularBooks from "@/Components/Homepage/PopularBooks";
 import Reviews from "@/Components/Homepage/Reviews";
@@ -17,7 +17,7 @@ export default function Home() {
       <BestSellers />
       <JoinNow />
       <Reviews />
-      <DiscoverPage />
+      
     </div>
   );
 }
