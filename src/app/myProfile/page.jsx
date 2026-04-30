@@ -30,7 +30,7 @@ const MyProfile = () => {
                         <div className="!-mt-14 flex items-end justify-between">
                             <div className="h-28 w-28 overflow-hidden rounded-full border-4 border-[#8b4020] bg-(--surface)">
                                 {user?.image ? (
-                                    <Image src={user.image} alt={user.name} className="h-full w-full object-cover" />
+                                    <Image src={user.image} alt={user.name}  width={100} height={100} className="h-full w-full object-cover" />
                                 ) : (
                                     <div className="flex h-full w-full items-center justify-center font-serif text-4xl text-(--gold)">
                                         {user.name.charAt(0).toUpperCase()}
@@ -38,7 +38,7 @@ const MyProfile = () => {
                                 )}
                             </div>
                             <button className="btn outline-none shadow-none border-none !px-3 bg-(--rust) text-white">
-                                <Link href="/profile/update" className='flex'>
+                                <Link href="/myProfile/update" className='flex'>
                                     <BiPencil className="!mr-1.5 h-4 w-4" /> Update
                                 </Link>
                             </button >
