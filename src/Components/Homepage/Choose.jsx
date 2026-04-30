@@ -23,14 +23,7 @@ const features = [
     }
 ];
 
-const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (delay = 0) => ({
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.8, delay, ease: 'easeOut' }
-    })
-};
+
 const pulse = {
     animate: {
         opacity: [1, 0.3, 1],
@@ -43,10 +36,10 @@ const Choose = () => {
         <div className=" bg-white">
             <div className="w-11/12 !mx-auto !py-10">
                 <motion.div
-                    variants={fadeInUp}
-                    initial="hidden"
-                    animate="visible"
-                    custom={0}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.9, delay: 0.2 }}
+                    viewport={{ once: true }}
                     className=" inline-flex items-center gap-2  border border-(--rust) rounded-full !px-4 !py-2 text-sm text-(--rust) font-['Space_Mono',monospace] bg-(--gold2)/10"
                 >
                     <motion.span
@@ -59,10 +52,10 @@ const Choose = () => {
                 </motion.div>
                 {/* Heading */}
                 <motion.h1
-                    variants={fadeInUp}
-                    initial="hidden"
-                    animate="visible"
-                    custom={0.1}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.9, delay: 0.2 }}
+                    viewport={{ once: true }}
                     className="font1 !mt-8  leading-none tracking-tighter "
                     style={{ fontSize: 'clamp(52px, 8vw, 62px)' }}
                 >
@@ -72,10 +65,10 @@ const Choose = () => {
 
                 {/* Subtitle */}
                 <motion.p
-                    variants={fadeInUp}
-                    initial="hidden"
-                    animate="visible"
-                    custom={0.2}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.9, delay: 0.2 }}
+                    viewport={{ once: true }}
                     className="!mt-4 text-[17px] text-(--muted) max-w-lg leading-relaxed font-light"
                 >
                     Keep tract of what you're reading. Set reading goals and connect with friends to share your book reviews.
@@ -84,16 +77,16 @@ const Choose = () => {
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-4 !mt-8'>
                     {
                         features.map(feature => <motion.div
-                            variants={fadeInUp}
-                            initial="hidden"
-                            animate="visible"
-                            custom={0.2}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.9, delay: 0.2 }}
+                            viewport={{ once: true }}
                             key={feature.id}
                             className='flex flex-col items-center  gap-2.5 justify-center text-center bg-(--gold2)/12 !px-4 !py-6'
-                            >
-                                <p className='text-(--rust)'>{feature.icon}</p>
-                                <h3  className='text-(--rust) font-semibold'>{feature.title}</h3>
-                                <p className='text-(--muted)'>{feature.description}</p>
+                        >
+                            <p className='text-(--rust)'>{feature.icon}</p>
+                            <h3 className='text-(--rust) font-semibold'>{feature.title}</h3>
+                            <p className='text-(--muted)'>{feature.description}</p>
                         </motion.div>)
                     }
                 </div>

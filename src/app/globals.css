@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import "tailwindcss";
+@import "@heroui/styles"; 
 @plugin "daisyui";
 
 :root
@@ -50,7 +51,6 @@ body{
 .roboto{
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 100;
   font-style: normal;
   font-variation-settings:
     "wdth" 100;

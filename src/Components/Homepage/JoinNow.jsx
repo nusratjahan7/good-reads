@@ -19,7 +19,7 @@ const JoinNow = () => {
             <div className="hero-content w-11/12 mx-auto flex-col lg:flex-row items-center  gap-10 md:gap-20 !py-10">
                 <motion.div
                     className="relative"
-                    initial={{ opacity: 0, x: 50 }}
+                    initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.7, delay: 0.2 }}
                     viewport={{ once: true, amount: 0.2 }}
@@ -28,7 +28,7 @@ const JoinNow = () => {
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
+                    initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.7, delay: 0.2 }}
                     viewport={{ once: true, amount: 0.2 }} >
