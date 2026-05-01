@@ -1,11 +1,11 @@
-import React from 'react';
+import UpdateProfile from "@/Components/MyProfile/UpdateProfile";
 
-const Update = () => {
-    return (
-        <div>
-            update
-        </div>
-    );
+
+
+export const metadata = {
+  title: "Update Profile | Good Reads",
 };
 
-export default Update;
+export default function UpdatePage() {
+  return <UpdateProfile />;
+}

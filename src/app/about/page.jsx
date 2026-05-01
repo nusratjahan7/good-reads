@@ -1,5 +1,9 @@
 import React from 'react';
 
+export const metadata = {
+  title: "About | Good Reads",
+};
+
 const AboutPage = () => {
     return (
         <div className="bg-(--surface) text-(--ivory)">

@@ -272,7 +272,7 @@ const Reviews = () => {
                     showThumbs={false}
 
                     centerMode={true}
-                    centerSlidePercentage={50}
+                    centerSlidePercentage={70}
 
 
                     renderArrowNext={(clickHandler, hasNext, label) => (

@@ -105,7 +105,7 @@ const Banner = () => {
 
                    
 
-                    <div className="absolute -bottom-12 -right-5 w-30 h-30 rounded-full bg-(--gold)/40 border border-(--rust)/40 flex items-center justify-center text-[12px] font-mono text-[#5f1f03] text-center leading-[1.4] backdrop-blur-sm animate-bounce-slow">
+                    <div className="absolute -bottom-12 -right-1 sm:-right-8 w-30 h-30 rounded-full bg-(--gold)/40 border border-(--rust)/40 flex items-center justify-center text-[12px] font-mono text-[#5f1f03] text-center leading-[1.4] backdrop-blur-sm animate-bounce-slow">
                         World's <br /> largest<br /> Book community<br />✦
                     </div>
                 </motion.div>
