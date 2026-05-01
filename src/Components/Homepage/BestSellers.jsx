@@ -1,9 +1,12 @@
-import React from 'react';
+import { getBooks } from "@/lib/getBooks";
+import BestSellersBooks from "./BestSellersBooks";
+
 
 const BestSellers = () => {
+    const books = getBooks();
     return (
         <div>
-            Best sellers
+            <BestSellersBooks books={books} />
         </div>
     );
 };

@@ -5,23 +5,17 @@ import Link from 'next/link';
 import React from 'react';
 import cover from '@/assets/download.jpeg';
 import { BiCalendar, BiMailSend, BiPencil } from 'react-icons/bi';
+import { redirect } from 'next/navigation';
 
 const MyProfile = () => {
- 
+
 
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
     const createdDate = new Date(user?.createdAt);
     const formattedDate = createdDate.toLocaleDateString();
     if (!user) {
-        return (
-            <section className="!mx-auto max-w-md bg-(--rust)/20 !px-6 !my-32  !py-10 text-center rounded-2xl">
-                <h1 className="font-serif text-3xl !mb-6">Sign in to view your profile</h1>
-                < button className="btn outline-none border-none !px-3 bg-(--rust) text-white">
-                    <Link href="/login">Log In</Link>
-                </button>
-            </section>
-        );
+        redirect("/login");
     }
 
     return (
@@ -55,7 +49,7 @@ const MyProfile = () => {
                         </div>
 
                         <h1 className="!mt-4 font-serif text-4xl">{user.name}</h1>
-                        <p className="!mt-1 text-sm text-[#461b09] font-bold">Member of goodreads</p>
+                        <p className="!mt-1 text-sm text-(--rust) font-bold">Member of goodreads</p>
 
                         <div className="!mt-8 grid gap-3 text-sm">
                             <div className="flex items-center gap-3 rounded-lg border border-(--rust) bg-(--surface) !px-4 !py-3">

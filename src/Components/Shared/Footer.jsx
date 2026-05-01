@@ -28,8 +28,8 @@ const Footer = () => {
                     <a className="link link-hover text-(--muted) ">Press kit</a>
                 </nav>
                 <nav>
-                    <h6 className="footer-title text-(--rust)">Social</h6>
-                    <div className="grid grid-flow-col gap-4">
+                    <h6 className="footer-title !ml-3 text-(--rust)">Social</h6>
+                    <div className="grid grid-flow-col !ml-3 gap-4 items-center">
                         <a>
                             <BsTwitter className='h-6 w-6' />
                         </a>

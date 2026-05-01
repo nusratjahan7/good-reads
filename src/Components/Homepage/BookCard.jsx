@@ -10,7 +10,7 @@ const BookCard = ({ book, index }) => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true, amount: 0.2 }}
-            className="relative h-72 rounded-xl overflow-hidden group cursor-pointer"
+            className="relative h-80 rounded-xl overflow-hidden group cursor-pointer"
         >
             {/* Background Image */}
             <Image
