@@ -54,7 +54,7 @@ const UpdateProfile = () => {
 
                 {/* Name */}
                 <div className="flex flex-col gap-1.5">
-                    <label className="text-sm font-medium text-(--gold)">
+                    <label className="text-sm font-medium text-(--rust)">
                         Full Name
                     </label>
                     <input
@@ -68,7 +68,7 @@ const UpdateProfile = () => {
 
                 {/* Image URL */}
                 <div className="flex flex-col gap-1.5">
-                    <label className="text-sm font-medium text-(--gold)">
+                    <label className="text-sm font-medium text-(--rust)">
                         Photo URL
                     </label>
                     <input
