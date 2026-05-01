@@ -4,8 +4,10 @@ import NavLink from './Navlink';
 import Link from 'next/link';
 import { authClient } from '@/lib/auth-client';
 import { FaBookReader } from 'react-icons/fa';
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
+    const router = useRouter();
     const [open, setOpen] = useState(false);
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
@@ -14,8 +16,8 @@ const Navbar = () => {
         <nav className=' !py-4 sticky top-0 right-0 left-0 z-50  backdrop-blur-2xl'>
             <div className='w-11/12 !mx-auto flex items-center justify-between'>
                 <a href="#" className='roboto text-3xl text-(--deep)/50 tracking-tighter flex gap-2 items-center'>
-                <FaBookReader className='text-(--rust)' />
-                    good<span className='text-(--rust) '>reads</span>
+                    <FaBookReader className='text-(--rust)' />
+                    <h2>good<span className='text-(--rust) '>reads</span></h2>
                 </a>
 
 
@@ -27,20 +29,23 @@ const Navbar = () => {
                 </ul>
 
                 <div>
-                    { isPending ? 
-                    (<span className="hidden md:block  loading loading-dots loading-xs"></span>) 
-                    
-                    : user ? 
-                    (<button onClick={async () => await authClient.signOut()} className="btn hidden md:block outline-none border-none !px-3 bg-(--rust) text-white">Logout</button>)
-                    
-                    : (<div className='flex gap-4'>
-                        <button className="btn hidden md:block outline-none border-none !px-3 bg-(--rust) text-white">
-                            <Link href={'/login'}>Login</Link>
-                        </button>
-                        <button className="btn btn-outline hidden md:block  !px-3 text-(--rust) hover:bg-(--rust)/30  hover:border hover:border-(--rust)/20">
-                            <Link href={'/register'}>Signup</Link>
-                        </button>
-                    </div>) }
+                    {isPending ?
+                        (<span className="hidden md:block  loading loading-dots loading-xs"></span>)
+
+                        : user ?
+                            (<button onClick={async () => {
+                                    await authClient.signOut();
+                                    router.push('/');
+                                }} className="btn hidden md:block outline-none border-none !px-3 bg-(--rust) text-white">Logout</button>)
+
+                            : (<div className='flex gap-4'>
+                                <button className="btn hidden md:block outline-none border-none !px-3 bg-(--rust) text-white">
+                                    <Link href={'/login'}>Login</Link>
+                                </button>
+                                <button className="btn btn-outline hidden md:block  !px-3 text-(--rust) hover:bg-(--rust)/30  hover:border hover:border-(--rust)/20">
+                                    <Link href={'/register'}>Signup</Link>
+                                </button>
+                            </div>)}
                 </div>
 
 
@@ -63,22 +68,25 @@ const Navbar = () => {
                     </ul>
 
                     <div>
-                    { isPending ? 
-                    (<span className="loading loading-dots loading-xs"></span>) 
-                    
-                    : user ? 
-                    (<button onClick={async () => await authClient.signOut()} className="btn outline-none border-none !px-3 bg-(--rust) text-white">Logout</button>)
-                    
-                    : (<div className='flex flex-col gap-4'>
-                        <button className="btn outline-none border-none !px-3 bg-(--rust) text-white">
-                            <Link href={'/login'}>Login</Link>
-                        </button>
-                        <button className="btn btn-outline  !px-3 text-(--rust) hover:bg-(--rust)/30  hover:border hover:border-(--rust)/20">
-                            <Link href={'/register'}>Signup</Link>
-                        </button>
-                    </div>) }
+                        {isPending ?
+                            (<span className="loading loading-dots loading-xs"></span>)
 
-                </div>
+                            : user ?
+                                (<button onClick={async () => {
+                                    await authClient.signOut();
+                                    router.push('/');
+                                }} className="btn outline-none border-none !px-3 bg-(--rust) text-white">Logout</button>)
+
+                                : (<div className='flex flex-col gap-4'>
+                                    <button className="btn outline-none border-none !px-3 bg-(--rust) text-white">
+                                        <Link href={'/login'}>Login</Link>
+                                    </button>
+                                    <button className="btn btn-outline  !px-3 text-(--rust) hover:bg-(--rust)/30  hover:border hover:border-(--rust)/20">
+                                        <Link href={'/register'}>Signup</Link>
+                                    </button>
+                                </div>)}
+
+                    </div>
                 </div>
             )}
 

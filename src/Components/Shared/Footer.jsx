@@ -9,7 +9,7 @@ const Footer = () => {
                 <nav className='flex flex-col items-center md:items-start'>
                     <h3 href="#" className='roboto text-4xl text-(--deep)/50 tracking-tighter text-center md:text-left flex gap-2 items-center'>
                     <FaBookReader className='text-(--rust)' />
-                        good<span className='text-(--rust) '>reads</span>
+                       <span>good<span className='text-(--rust) '>reads</span></span>
                     </h3>
                     <p className='max-w-sm text-(--muted) text-center md:text-left'>A modern library for the curious. Borrow widely, read deeply, and let great ideas keep good company.</p>
                 </nav>
