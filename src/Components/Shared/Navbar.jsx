@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import NavLink from './Navlink';
 import Link from 'next/link';
 import { authClient } from '@/lib/auth-client';
+import { FaBookReader } from 'react-icons/fa';
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
@@ -12,7 +13,8 @@ const Navbar = () => {
     return (
         <nav className=' !py-4 sticky top-0 right-0 left-0 z-50  backdrop-blur-2xl'>
             <div className='w-11/12 !mx-auto flex items-center justify-between'>
-                <a href="#" className='roboto text-3xl text-(--deep)/50 tracking-tighter '>
+                <a href="#" className='roboto text-3xl text-(--deep)/50 tracking-tighter flex gap-2 items-center'>
+                <FaBookReader className='text-(--rust)' />
                     good<span className='text-(--rust) '>reads</span>
                 </a>
 

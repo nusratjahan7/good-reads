@@ -1,13 +1,14 @@
 import React from 'react';
 import { BsInstagram, BsTwitter } from 'react-icons/bs';
-import { FaFacebook } from 'react-icons/fa';
+import { FaBookReader, FaFacebook } from 'react-icons/fa';
 
 const Footer = () => {
     return (
         <>
             <footer className="footer w-11/12 !mx-auto !py-9 flex flex-col sm:flex-row items-center sm:items-start justify-between  p-10">
                 <nav className='flex flex-col items-center md:items-start'>
-                    <h3 href="#" className='roboto text-4xl text-(--deep)/50 tracking-tighter text-center md:text-left'>
+                    <h3 href="#" className='roboto text-4xl text-(--deep)/50 tracking-tighter text-center md:text-left flex gap-2 items-center'>
+                    <FaBookReader className='text-(--rust)' />
                         good<span className='text-(--rust) '>reads</span>
                     </h3>
                     <p className='max-w-sm text-(--muted) text-center md:text-left'>A modern library for the curious. Borrow widely, read deeply, and let great ideas keep good company.</p>
