@@ -5,8 +5,13 @@ export const metadata = {
     title: "All Books | Good Reads",
 };
 
-const AllBooks = () => {
-     const books = getBooks();
+async function getAllBooks() {
+    await new Promise((resolve) => setTimeout(resolve, 500)); 
+    return getBooks();
+}
+
+const AllBooks = async () => {
+     const books = await getAllBooks();
 
     return (
         <div>
