@@ -24,7 +24,7 @@
     "description": "A journey through the universe exploring the origins of life, the nature of consciousness, and humanity's place in the cosmos, blending science with philosophy and wonder.",
     "category": "Science",
     "available_quantity": 6,
-    "image_url": "https://covers.openlibrary.org/b/isbn/9780345539434-L.jpg"
+    "image_url": "https://covers.openlibrary.org/b/id/8416374-L.jpg" 
   },
   {
     "id": 4,
@@ -69,7 +69,7 @@
     "description": "A deep dive into the core mechanisms of JavaScript, covering scope, closures, this, prototypes, and asynchronous programming to help developers truly master the language.",
     "category": "Tech",
     "available_quantity": 11,
-    "image_url": "https://covers.openlibrary.org/b/isbn/9781491904244-L.jpg"
+    "image_url": "https://covers.openlibrary.org/b/isbn/9781491924464-L.jpg"
   },
   {
     "id": 9,

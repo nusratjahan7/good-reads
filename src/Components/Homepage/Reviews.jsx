@@ -1,7 +1,7 @@
 "use client"
 import { motion } from 'framer-motion';
-import { BiLeftArrow, BiSolidLeftArrow, BiSolidRightArrow, BiStar } from 'react-icons/bi';
-import { BsStar, BsStarFill } from 'react-icons/bs';
+import { BiSolidRightArrow } from 'react-icons/bi';
+import { BsStarFill } from 'react-icons/bs';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
