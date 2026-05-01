@@ -36,10 +36,10 @@ const UpdateProfile = () => {
     };
 
     return (
-        <section className="!mx-auto shadow-2xl max-w-md !px-6 !my-9 !py-8">
+        <section className="!mx-auto shadow-2xl  max-w-lg !px-6 !my-9 !py-8">
             <h1 className="font-serif text-3xl text-center !mb-8">Update Profile</h1>
 
-            <form onSubmit={handleSubmit} className="flex flex-col w-70 sm:w-96 gap-5">
+            <form onSubmit={handleSubmit} className="flex items-center  flex-col  gap-5">
 
                 {/* Cover Preview */}
                 <div className="relative h-32 w-full rounded-xl overflow-hidden border border-(--rust)">
@@ -65,7 +65,7 @@ const UpdateProfile = () => {
                 </div>
 
                 {/* Name */}
-                <div className="flex flex-col gap-1.5">
+                <div className="flex flex-col w-full gap-1.5">
                     <label className="text-sm font-medium text-(--rust)">
                         Full Name
                     </label>
@@ -79,7 +79,7 @@ const UpdateProfile = () => {
                 </div>
 
                 {/* Image URL */}
-                <div className="flex flex-col gap-1.5">
+                <div className="flex flex-col w-full gap-1.5">
                     <label className="text-sm font-medium text-(--rust)">
                         Photo URL
                     </label>
@@ -93,7 +93,7 @@ const UpdateProfile = () => {
                 </div>
 
                 {/* Cover URL */}
-                <div className="flex flex-col gap-1.5">
+                <div className="flex flex-col w-full gap-1.5">
                     <label className="text-sm font-medium text-(--rust)">
                         Cover Photo URL
                     </label>
@@ -110,7 +110,7 @@ const UpdateProfile = () => {
                 <button
                     type="submit"
                     disabled={status === "loading"}
-                    className="!py-3 !px-6 bg-(--rust) text-white rounded-xl font-semibold hover:opacity-90 transition-all disabled:opacity-60"
+                    className="!py-3 !px-6 bg-(--rust) text-white rounded-xl font-semibold hover:opacity-90 transition-all disabled:opacity-60 w-full"
                 >
                     {status === "loading" ? "Updating..." : "Update Information"}
                 </button>
