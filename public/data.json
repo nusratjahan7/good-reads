@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "title": "The Night Circus",
+    "author": "Erin Morgenstern",
+    "description": "A mysterious circus that only appears at night becomes the stage for a fierce competition between two young magicians, Celia and Marco, who have been trained since childhood for a game they don't fully understand.",
+    "category": "Story",
+    "available_quantity": 5,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780385534635-L.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "description": "A handbook of agile software craftsmanship that teaches programmers how to write clean, readable, and maintainable code through practical examples and best practices.",
+    "category": "Tech",
+    "available_quantity": 8,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Cosmos",
+    "author": "Carl Sagan",
+    "description": "A journey through the universe exploring the origins of life, the nature of consciousness, and humanity's place in the cosmos, blending science with philosophy and wonder.",
+    "category": "Science",
+    "available_quantity": 6,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780345539434-L.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "description": "Set in a distant future, a young nobleman named Paul Atreides must navigate politics, religion, and survival on the desert planet Arrakis, the only source of the most valuable substance in the universe.",
+    "category": "Story",
+    "available_quantity": 4,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780441013593-L.jpg"
+  },
+  {
+    "id": 5,
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt & David Thomas",
+    "description": "A collection of practical tips and philosophies for software developers covering topics from personal responsibility and career development to architectural techniques for keeping your code flexible and reusable.",
+    "category": "Tech",
+    "available_quantity": 7,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg"
+  },
+  {
+    "id": 6,
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "description": "Stephen Hawking explores the nature of space and time, black holes, and the Big Bang theory, making complex cosmological concepts accessible to general readers.",
+    "category": "Science",
+    "available_quantity": 9,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780553380163-L.jpg"
+  },
+  {
+    "id": 7,
+    "title": "The Midnight Library",
+    "author": "Matt Haig",
+    "description": "Between life and death, Nora Seed discovers a library containing books of all the lives she could have lived, forcing her to confront what it truly means to live a fulfilling life.",
+    "category": "Story",
+    "available_quantity": 3,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780525559474-L.jpg"
+  },
+  {
+    "id": 8,
+    "title": "You Don't Know JS",
+    "author": "Kyle Simpson",
+    "description": "A deep dive into the core mechanisms of JavaScript, covering scope, closures, this, prototypes, and asynchronous programming to help developers truly master the language.",
+    "category": "Tech",
+    "available_quantity": 11,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9781491904244-L.jpg"
+  },
+  {
+    "id": 9,
+    "title": "The Selfish Gene",
+    "author": "Richard Dawkins",
+    "description": "A groundbreaking work in evolutionary biology that introduces the gene-centered view of evolution and the concept of the meme, changing how scientists and the public understand natural selection.",
+    "category": "Science",
+    "available_quantity": 5,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780198788607-L.jpg"
+  },
+  {
+    "id": 10,
+    "title": "The Name of the Wind",
+    "author": "Patrick Rothfuss",
+    "description": "The first day in the story of Kvothe, a legendary wizard and musician who recounts his extraordinary life from his childhood in a traveling troupe to his years at a renowned university for magic.",
+    "category": "Story",
+    "available_quantity": 6,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780756404079-L.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Design Patterns",
+    "author": "Gang of Four",
+    "description": "A classic software engineering book presenting 23 foundational design patterns that provide reusable solutions to commonly occurring problems in object-oriented software design.",
+    "category": "Tech",
+    "available_quantity": 4,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780201633610-L.jpg"
+  },
+  {
+    "id": 12,
+    "title": "The Gene",
+    "author": "Siddhartha Mukherjee",
+    "description": "An intimate history of the gene that interweaves science, social history, and personal narrative to explore how genes define our identity and shape our future.",
+    "category": "Science",
+    "available_quantity": 7,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9781476733524-L.jpg"
+  },
+  {
+    "id": 13,
+    "title": "Project Hail Mary",
+    "author": "Andy Weir",
+    "description": "A lone astronaut wakes up in a spacecraft with no memory, only to discover he is on a desperate one-man mission to save Earth from an extinction-level threat.",
+    "category": "Story",
+    "available_quantity": 8,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780593135204-L.jpg"
+  },
+  {
+    "id": 14,
+    "title": "The Innovators",
+    "author": "Walter Isaacson",
+    "description": "A chronicle of the pioneers who created the computer and the internet, revealing how creativity and collaboration shaped the digital revolution that defines our modern world.",
+    "category": "Tech",
+    "available_quantity": 5,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9781476708706-L.jpg"
+  },
+  {
+    "id": 15,
+    "title": "Sapiens",
+    "author": "Yuval Noah Harari",
+    "description": "A sweeping narrative of humanity's history from the Stone Age to the twenty-first century, exploring how biology and history shaped the human species and the world we inhabit.",
+    "category": "Science",
+    "available_quantity": 10,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg"
+  },
+  {
+    "id": 16,
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "description": "A young Andalusian shepherd embarks on a journey to find treasure near the Egyptian pyramids and along the way discovers the true meaning of his personal legend and the soul of the world.",
+    "category": "Story",
+    "available_quantity": 12,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780062315007-L.jpg"
+  },
+  {
+    "id": 17,
+    "title": "Structure and Interpretation of Computer Programs",
+    "author": "Harold Abelson & Gerald Jay Sussman",
+    "description": "A foundational computer science textbook that teaches programming as a discipline of building abstractions, covering functional programming, recursion, and the design of interpreters.",
+    "category": "Tech",
+    "available_quantity": 3,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780262510875-L.jpg"
+  },
+  {
+    "id": 18,
+    "title": "The Origin of Species",
+    "author": "Charles Darwin",
+    "description": "Darwin's revolutionary work presenting his theory of evolution by natural selection, demonstrating how all species of life have descended from common ancestors through a branching pattern of evolution.",
+    "category": "Science",
+    "available_quantity": 6,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780140432053-L.jpg"
+  },
+  {
+    "id": 19,
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "description": "A practical guide to building good habits and breaking bad ones, presenting a proven framework for making tiny changes that lead to remarkable results in personal and professional life.",
+    "category": "Story",
+    "available_quantity": 14,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg"
+  },
+  {
+    "id": 20,
+    "title": "The Double Helix",
+    "author": "James D. Watson",
+    "description": "A personal account of the discovery of the structure of DNA, offering a candid look at the competitive world of scientific research and the human drama behind one of the greatest scientific achievements.",
+    "category": "Science",
+    "available_quantity": 4,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780743216302-L.jpg"
+  }
+]
