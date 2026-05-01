@@ -40,7 +40,7 @@ const BookCard = ({ book, index }) => {
 
                 {/* Button */}
                 <Link
-                    href={`/allBooks/${book.id}`}
+                    href={`/allBooks/details/${book.id}`}
                     className="!mt-2 text-center !py-2 !px-4 bg-(--rust) text-white text-xs rounded-lg hover:opacity-90 transition-all"
                 >
                     View Details
