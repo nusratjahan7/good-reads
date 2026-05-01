@@ -2,32 +2,44 @@
 import { authClient } from '@/lib/auth-client';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
-import cover from '@/assets/download.jpeg';
+import React, { useState, useEffect } from 'react'; 
+import cover from '@/assets/cover.jpeg';
 import { BiCalendar, BiMailSend, BiPencil } from 'react-icons/bi';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation'; 
 
 const MyProfile = () => {
+    const [coverUrl, setCoverUrl] = useState(""); 
+    const router = useRouter();
 
+    useEffect(() => {
+        const saved = localStorage.getItem("coverUrl");
+        if (saved) setCoverUrl(saved);
+    }, []);
 
-    const { data: session, isPending } = authClient.useSession();
+    const { data: session } = authClient.useSession();
     const user = session?.user;
+
+    useEffect(() => {
+        if (session !== undefined && !user) {
+            router.push("/login");
+        }
+    }, [user, session, router]);
+
+    if (!user) return null; 
+
     const createdDate = new Date(user?.createdAt);
     const formattedDate = createdDate.toLocaleDateString();
-    if (!user) {
-        redirect("/login");
-    }
 
     return (
         <div>
             <section className="!mx-auto max-w-3xl !px-6 !py-5 md:!py-4">
-                <div className="overflow-hidden rounded-2xl  shadow-xl">
+                <div className="overflow-hidden rounded-2xl shadow-xl">
                     <div className="relative h-40 w-full">
                         <Image
-                            src={cover}
+                            src={coverUrl || cover}
                             alt="cover"
                             fill
-                            className="w-full"
+                            className="object-cover w-full" 
                         />
                     </div>
                     <div className="!px-8 !pb-8">
@@ -45,7 +57,7 @@ const MyProfile = () => {
                                 <Link href="/myProfile/update" className='flex'>
                                     <BiPencil className="!mr-1.5 h-4 w-4" /> Update
                                 </Link>
-                            </button >
+                            </button>
                         </div>
 
                         <h1 className="!mt-4 font-serif text-4xl">{user.name}</h1>

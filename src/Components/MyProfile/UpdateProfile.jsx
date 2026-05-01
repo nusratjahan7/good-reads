@@ -3,15 +3,17 @@ import { authClient } from "@/lib/auth-client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import cover from "@/assets/cover.jpeg";
 
 const UpdateProfile = () => {
     const { data: session } = authClient.useSession();
     const user = session?.user;
     const router = useRouter();
 
-    const [name, setName] = useState(user?.name || "");
-    const [image, setImage] = useState(user?.image || "");
-    const [status, setStatus] = useState(""); // "loading" | "success" | "error"
+    const [name, setName] = useState("");
+    const [image, setImage] = useState("");
+    const [coverUrl, setCoverUrl] = useState("");
+    const [status, setStatus] = useState("");
 
     useEffect(() => {
         if (user) {
@@ -39,17 +41,27 @@ const UpdateProfile = () => {
 
             <form onSubmit={handleSubmit} className="flex flex-col w-70 sm:w-96 gap-5">
 
-                {/* Preview */}
-                <div className=" flex items-center justify-center">
-                    {image && (
+                {/* Cover Preview */}
+                <div className="relative h-32 w-full rounded-xl overflow-hidden border border-(--rust)">
                     <Image
-                        src={image}
-                        alt="preview"
-                        className="w-20 h-20 rounded-full object-cover border-2 border-(--gold)"
-                        width={200}
-                        height={200}
+                        src={coverUrl || cover}
+                        alt="cover"
+                        fill
+                        className="object-cover"
                     />
-                )}
+                </div>             
+
+                {/* Profile Preview */}
+                <div className="flex items-center justify-center">
+                    {image && (
+                        <Image
+                            src={image}
+                            alt="preview"
+                            className="w-20 h-20 rounded-full object-cover border-2 border-(--gold)"
+                            width={200}
+                            height={200}
+                        />
+                    )}
                 </div>
 
                 {/* Name */}
@@ -80,7 +92,19 @@ const UpdateProfile = () => {
                     />
                 </div>
 
-                
+                {/* Cover URL */}
+                <div className="flex flex-col gap-1.5">
+                    <label className="text-sm font-medium text-(--rust)">
+                        Cover Photo URL
+                    </label>
+                    <input
+                        type="text"
+                        value={coverUrl}
+                        onChange={(e) => setCoverUrl(e.target.value)}
+                        placeholder="https://cover-image-url.com"
+                        className="!px-4 !py-3 rounded-xl bg-(--surface) border border-(--rust) text-(--gold) outline-none focus:border-(--gold) transition-all"
+                    />
+                </div>
 
                 {/* Submit */}
                 <button
