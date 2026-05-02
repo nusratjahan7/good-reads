@@ -1,8 +1,7 @@
 
-# GoodReads Web App
+### GoodReads Web App
 
 A modern, fully functional **Book Management Web Application** built with **Next.js**, **React**, **Tailwind CSS**, and various useful libraries. This app allows users to explore books, read reviews, and manage their profiles. It features secure authentication and protected routes for a personalized experience.
-
 ## Purpose
 
 This project aims to provide a user-friendly platform for managing and browsing books, where users can:
@@ -10,12 +9,10 @@ This project aims to provide a user-friendly platform for managing and browsing 
 - View detailed book information
 - Manage their profiles securely
 - Leave reviews and interact with the community
-
 ## Live URL
 
 You can view the live app here:  
 [GoodReads Web App](https://good-reads-swart.vercel.app/)
-
 ## Key Features
 
 - 🔒 **Authentication**: Supports email/password login and Google login with **BetterAuth** for secure sign-in.
@@ -26,7 +23,6 @@ You can view the live app here:
 - ⭐ **Reviews Section**: Users can leave reviews for books, with **Swiper.js** used for an interactive review carousel.
 - 📝 **Profile Management**: Users can view and update their profile information (including name and photo).
 - 🚀 **Toasts**: User feedback with **Toastify** for notifications on actions like successful sign-in, profile updates, etc.
-
 ## Technologies Used
 
 - **Next.js**: React framework for server-side rendering and routing.
@@ -36,7 +32,6 @@ You can view the live app here:
 - **Swiper.js**: Carousel library for creating interactive and smooth carousels for reviews.
 - **Toastify**: Library for displaying notifications (success/error messages).
 - **BetterAuth**: Authentication library for managing user sign-ins with email/password or Google login.
-
 ## NPM Packages Used
 
 - `next`
@@ -46,31 +41,26 @@ You can view the live app here:
 - `swiper`
 - `react-toastify`
 - `better-auth`
-
-## Installation
-
-To run this project locally, follow these steps:
+##  Installation
 
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/your-username/goodreads-web-app.git
    ```
-2. **Navigate to the project folder:**:
+2. **Navigate to the project folder:**
    ```bash
    cd goodreads-web-app
    ```
-3. **Install dependencies:**:
+3. **Install dependencies:**
    ```bash
    npm install
    ```
-4. **Start the development server:**:
+4. **Start the development server:**
    ```bash
    npm run dev
-  ```
 
 5. Open your browser and go to http://localhost:3000 to see the app in action.
-
-### How to Contribute
+## How to Contribute
 
 Feel free to fork this repository and make improvements! Contributions are always welcome.
 
@@ -111,4 +101,3 @@ Feel free to fork this repository and make improvements! Contributions are alway
 - **How to Contribute**: Instructions for contributing to the project.
 - **License**: Information about the project’s license (MIT).
 - **Acknowledgements**: Credits the libraries and tools used in the project.
-
