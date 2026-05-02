@@ -67,14 +67,17 @@ To run this project locally, follow these steps:
    ```bash
    npm run dev
   ```
+
 5. Open your browser and go to http://localhost:3000 to see the app in action.
 
-## How to Contribute
+### How to Contribute
 
 Feel free to fork this repository and make improvements! Contributions are always welcome.
 
 ### Steps to contribute:
+
 1. **Fork the repository**
+
 2. **Create a new branch**: 
    ```bash
    git checkout -b feature-name
