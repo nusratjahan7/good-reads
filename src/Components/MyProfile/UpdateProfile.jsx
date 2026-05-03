@@ -2,8 +2,8 @@
 import { authClient } from "@/lib/auth-client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import cover from "@/assets/cover.jpeg";
+import Image from "next/image";
 
 const UpdateProfile = () => {
     const { data: session } = authClient.useSession();
@@ -12,13 +12,21 @@ const UpdateProfile = () => {
 
     const [name, setName] = useState("");
     const [image, setImage] = useState("");
+    const [previewImage, setPreviewImage] = useState("");
+
     const [coverUrl, setCoverUrl] = useState("");
+    const [previewCover, setPreviewCover] = useState("");
+
     const [status, setStatus] = useState("");
 
     useEffect(() => {
-        if (user) {
-            setName("");
-            setImage("");
+        const savedCover = localStorage.getItem("coverUrl");
+        if (savedCover) {
+            setPreviewCover(savedCover);
+        }
+        const savedImage = localStorage.getItem("profileImage");
+        if (savedImage) {
+            setPreviewImage(savedImage);
         }
     }, [user]);
 
@@ -26,49 +34,67 @@ const UpdateProfile = () => {
         e.preventDefault();
         setStatus("loading");
 
+        if (coverUrl) localStorage.setItem("coverUrl", coverUrl);
+        if (image) localStorage.setItem("profileImage", image);
+
         await authClient.updateUser({
-            name,
-            image,
+            ...(name && { name }),
+            ...(image && { image }),
         });
 
         setStatus("success");
+        router.refresh();
         router.push("/myProfile");
     };
 
     return (
-        <section className="!mx-auto shadow-2xl  max-w-lg !px-6 !my-9 !py-8">
+        <section className="!mx-auto shadow-2xl max-w-lg !px-6 !my-9 !py-8">
             <h1 className="font-serif text-3xl text-center !mb-8">Update Profile</h1>
 
-            <form onSubmit={handleSubmit} className="flex items-center  flex-col  gap-5">
+            <form onSubmit={handleSubmit} className="flex items-center flex-col gap-5">
 
                 {/* Cover Preview */}
                 <div className="relative h-32 w-full rounded-xl overflow-hidden border border-(--rust)">
-                    <Image
-                        src={coverUrl || cover}
-                        alt="cover"
-                        fill
-                        className="object-cover"
-                    />
-                </div>             
+                    {previewCover ? (
+                        <img
+                            src={previewCover}
+                            alt="cover"
+                            className="object-cover w-full h-full"
+                        />
+                    ) : (
+                        <Image
+                            src={cover}
+                            alt="cover"
+                            fill
+                            className="object-cover"
+                        />
+                    )}
+                </div>
 
                 {/* Profile Preview */}
-                <div className="flex items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/6">
-                    {image && (
-                        <Image
-                            src={image}
+                <div className="h-20 w-20 overflow-hidden rounded-full border-2 border-(--gold) bg-(--surface) flex items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/6">
+                    {previewImage ? (
+                        <img
+                            src={previewImage}
                             alt="preview"
-                            className="w-20 h-20 rounded-full object-cover border-2 border-(--gold)"
-                            width={200}
-                            height={200}
+                            className="h-full w-full object-cover"
                         />
+                    ) : user?.image ? (
+                        <img
+                            src={user.image}
+                            alt="preview"
+                            className="h-full w-full object-cover"
+                        />
+                    ) : (
+                        <span className="font-serif text-4xl text-(--gold)">
+                            {user?.name?.[0]?.toUpperCase() ?? "?"}
+                        </span>
                     )}
                 </div>
 
                 {/* Name */}
                 <div className="flex flex-col w-full gap-1.5">
-                    <label className="text-sm font-medium text-(--rust)">
-                        Full Name
-                    </label>
+                    <label className="text-sm font-medium text-(--rust)">Full Name</label>
                     <input
                         type="text"
                         value={name}
@@ -80,13 +106,14 @@ const UpdateProfile = () => {
 
                 {/* Image URL */}
                 <div className="flex flex-col w-full gap-1.5">
-                    <label className="text-sm font-medium text-(--rust)">
-                        Photo URL
-                    </label>
+                    <label className="text-sm font-medium text-(--rust)">Photo URL</label>
                     <input
                         type="text"
                         value={image}
-                        onChange={(e) => setImage(e.target.value)}
+                        onChange={(e) => {
+                            setImage(e.target.value);           // submit এর জন্য
+                            setPreviewImage(e.target.value);    // সাথে সাথে preview
+                        }}
                         placeholder="https://your-image-url.com"
                         className="!px-4 !py-3 rounded-xl bg-(--surface) border border-(--rust) text-(--gold) outline-none focus:border-(--gold) transition-all"
                     />
@@ -94,13 +121,14 @@ const UpdateProfile = () => {
 
                 {/* Cover URL */}
                 <div className="flex flex-col w-full gap-1.5">
-                    <label className="text-sm font-medium text-(--rust)">
-                        Cover Photo URL
-                    </label>
+                    <label className="text-sm font-medium text-(--rust)">Cover Photo URL</label>
                     <input
                         type="text"
                         value={coverUrl}
-                        onChange={(e) => setCoverUrl(e.target.value)}
+                        onChange={(e) => {
+                            setCoverUrl(e.target.value);        // submit এর জন্য
+                            setPreviewCover(e.target.value);    // সাথে সাথে preview
+                        }}
                         placeholder="https://cover-image-url.com"
                         className="!px-4 !py-3 rounded-xl bg-(--surface) border border-(--rust) text-(--gold) outline-none focus:border-(--gold) transition-all"
                     />
