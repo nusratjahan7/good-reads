@@ -73,7 +73,7 @@ const UpdateProfile = () => {
                     </div>
 
                     {/* Profile Preview */}
-                    <div className="h-20 w-20 overflow-hidden rounded-full border-2 border-(--gold) bg-(--surface) flex items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/6">
+                    <div className="h-20 w-20 overflow-hidden rounded-full border-2 border-(--gold) bg-(--surface) flex items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-1/6">
                         {previewImage ? (
                             <img
                                 src={previewImage}
