@@ -53,43 +53,45 @@ const UpdateProfile = () => {
 
             <form onSubmit={handleSubmit} className="flex items-center flex-col gap-5">
 
-                {/* Cover Preview */}
-                <div className="relative h-32 w-full rounded-xl overflow-hidden border border-(--rust)">
-                    {previewCover ? (
-                        <img
-                            src={previewCover}
-                            alt="cover"
-                            className="object-cover w-full h-full"
-                        />
-                    ) : (
-                        <Image
-                            src={cover}
-                            alt="cover"
-                            fill
-                            className="object-cover"
-                        />
-                    )}
-                </div>
+                <div className="relative w-full">
+                    {/* Cover Preview */}
+                    <div className="relative h-32 w-full rounded-xl overflow-hidden border border-(--rust)">
+                        {previewCover ? (
+                            <img
+                                src={previewCover}
+                                alt="cover"
+                                className="object-cover w-full h-full"
+                            />
+                        ) : (
+                            <Image
+                                src={cover}
+                                alt="cover"
+                                fill
+                                className="object-cover"
+                            />
+                        )}
+                    </div>
 
-                {/* Profile Preview */}
-                <div className="h-20 w-20 overflow-hidden rounded-full border-2 border-(--gold) bg-(--surface) flex items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/6">
-                    {previewImage ? (
-                        <img
-                            src={previewImage}
-                            alt="preview"
-                            className="h-full w-full object-cover"
-                        />
-                    ) : user?.image ? (
-                        <img
-                            src={user.image}
-                            alt="preview"
-                            className="h-full w-full object-cover"
-                        />
-                    ) : (
-                        <span className="font-serif text-4xl text-(--gold)">
-                            {user?.name?.[0]?.toUpperCase() ?? "?"}
-                        </span>
-                    )}
+                    {/* Profile Preview */}
+                    <div className="h-20 w-20 overflow-hidden rounded-full border-2 border-(--gold) bg-(--surface) flex items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/6">
+                        {previewImage ? (
+                            <img
+                                src={previewImage}
+                                alt="preview"
+                                className="h-full w-full object-cover"
+                            />
+                        ) : user?.image ? (
+                            <img
+                                src={user.image}
+                                alt="preview"
+                                className="h-full w-full object-cover"
+                            />
+                        ) : (
+                            <span className="font-serif text-4xl text-(--gold)">
+                                {user?.name?.[0]?.toUpperCase() ?? "?"}
+                            </span>
+                        )}
+                    </div>
                 </div>
 
                 {/* Name */}
@@ -111,8 +113,8 @@ const UpdateProfile = () => {
                         type="text"
                         value={image}
                         onChange={(e) => {
-                            setImage(e.target.value);           // submit এর জন্য
-                            setPreviewImage(e.target.value);    // সাথে সাথে preview
+                            setImage(e.target.value);
+                            setPreviewImage(e.target.value);
                         }}
                         placeholder="https://your-image-url.com"
                         className="!px-4 !py-3 rounded-xl bg-(--surface) border border-(--rust) text-(--gold) outline-none focus:border-(--gold) transition-all"
@@ -126,8 +128,8 @@ const UpdateProfile = () => {
                         type="text"
                         value={coverUrl}
                         onChange={(e) => {
-                            setCoverUrl(e.target.value);        // submit এর জন্য
-                            setPreviewCover(e.target.value);    // সাথে সাথে preview
+                            setCoverUrl(e.target.value);
+                            setPreviewCover(e.target.value);
                         }}
                         placeholder="https://cover-image-url.com"
                         className="!px-4 !py-3 rounded-xl bg-(--surface) border border-(--rust) text-(--gold) outline-none focus:border-(--gold) transition-all"

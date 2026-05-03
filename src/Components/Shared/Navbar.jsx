@@ -34,17 +34,17 @@ const Navbar = () => {
 
                         : user ?
                             (<button onClick={async () => {
-                                    await authClient.signOut();
-                                    router.push('/');
-                                }} className="btn hidden md:block outline-none border-none !px-3 bg-(--rust) text-white">Logout</button>)
+                                await authClient.signOut();
+                                router.push('/');
+                            }} className="btn hidden md:block outline-none border-none !px-3 bg-(--rust) text-white">Logout</button>)
 
-                            : (<div className='flex gap-4'>
-                                <button className="btn hidden md:block outline-none border-none !px-3 bg-(--rust) text-white">
-                                    <Link href={'/login'}>Login</Link>
-                                </button>
-                                <button className="btn btn-outline hidden md:block  !px-3 text-(--rust) hover:bg-(--rust)/30  hover:border hover:border-(--rust)/20">
-                                    <Link href={'/register'}>Signup</Link>
-                                </button>
+                            : (<div className='md:flex gap-4 hidden'>
+                                <Link href={'/login'} className="btn  outline-none border-none !px-3  bg-(--rust) text-white">
+                                    Login
+                                </Link>
+                                <Link href={'/register'} className="btn btn-outline !px-3 text-(--rust) hover:bg-(--rust)/30 hover:border hover:border-(--rust)/20">
+                                    Signup
+                                </Link>
                             </div>)}
                 </div>
 
@@ -78,12 +78,12 @@ const Navbar = () => {
                                 }} className="btn outline-none border-none !px-3 bg-(--rust) text-white">Logout</button>)
 
                                 : (<div className='flex flex-col gap-4'>
-                                    <button className="btn outline-none border-none !px-3 bg-(--rust) text-white">
-                                        <Link href={'/login'}>Login</Link>
-                                    </button>
-                                    <button className="btn btn-outline  !px-3 text-(--rust) hover:bg-(--rust)/30  hover:border hover:border-(--rust)/20">
-                                        <Link href={'/register'}>Signup</Link>
-                                    </button>
+                                    <Link href={'/login'} className="btn outline-none border-none !px-3 bg-(--rust) text-white">
+                                        Login
+                                    </Link>
+                                    <Link href={'/register'} className="btn btn-outline !px-3 text-(--rust) hover:bg-(--rust)/30 hover:border hover:border-(--rust)/20">
+                                        Signup
+                                    </Link>
                                 </div>)}
 
                     </div>
